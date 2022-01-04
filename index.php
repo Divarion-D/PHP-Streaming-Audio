@@ -1,15 +1,16 @@
 <?php
 //set variables
+
 $settings = array(
-	"name" => "Radio Liefde",
-	"genre" => "Romance",
+	"name" => "Radio Dalim",
+	"genre" => "Classic",
 	"url" => $_SERVER["SCRIPT_URI"],
 	"bitrate" => 96,
 	"music_directory" => "music/",
 	"database_file" => "music.db",
 	"buffer_size" => 16384,
 	"max_listen_time" => 14400,
-	"randomize_seed" => 31337
+	"randomize_seed" => 31257
 );
 
 set_time_limit(0);
@@ -94,6 +95,8 @@ while(time() - $start_time < $settings["max_listen_time"]) {
 				$payload = "StreamTitle='{$playfiles[$i]["artist"]} - {$playfiles[$i]["title"]}';".chr(0);
 
 			$metadata = chr(ceil(strlen($payload) / 16)).$payload.str_repeat(chr(0), 16 - (strlen($payload) % 16));
+		}else{
+		    $metadata = "";
 		}
 		echo substr($buffer, $j * $settings["buffer_size"], $settings["buffer_size"]).$metadata;
 	}
