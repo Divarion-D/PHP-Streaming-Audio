@@ -11,6 +11,8 @@ The script does not accept a single audio source, but uses lose audio files inst
 
 The advantage is low processor usage, because the audio has not to be transcoded on the fly.
 
+Version php 5.3
+
 Shoutcast protocol
 ==================
 The protocol is a bit of a hack. It's quite simple but there is almost no documentation on the interwebs. The protocol consists of two part: the mpeg audio and the metadata.
